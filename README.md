@@ -33,19 +33,19 @@ This repository contains the code and data used in the paper:
 5. (optional) evaluate power law fitting
 6. (optional) evaluate pith difference of eacn node
   
-### Example (Schoenberg Op.19)
+#### Example (Schoenberg Op.19)
 1. `python3 midi-to-text.py ~/_Music_Analysis/_Schoenberg/Op.19.mid  schoen_op19.txt`
 2. `awk -f midi_note.awk schoen_op19.txt > schoen_op19_note`
 3. 
-  3.1 N=1 (1 note as a node)
+   1.  N=1 (1 note as a node)
      `awk -f node2network.awk schoen_op19_note > schoen_op19_1.csv`
-  3.2 N=2 (2 notes as a node)
+   2.  N=2 (2 notes as a node)
      `awk -f note2node_1i.awk schoen_op19_note > schoen_op19_2.tmp`
      `awk -f node2network.awk schoen_op19_2.tmp > schoen_op19_2.csv`
-  3.3 N=3 (3 notes as a node)
+   3.  N=3 (3 notes as a node)
      `awk -f note2node_1i3.awk schoen_op19_note > schoen_op19_3.tmp`
      `awk -f node2network.awk schoen_op19_3.tmp > schoen_op19_3.csv`
-  3.4 N=4 (4 notes as a node)
+   4.  N=4 (4 notes as a node)
      `awk -f note2node_1i4.awk schoen_op19_note > schoen_op19_4.tmp`
      `awk -f node2network.awk schoen_op19_4.tmp > schoen_op19_4.csv`
 4. run Cytoscape and import the csv file and analyse
