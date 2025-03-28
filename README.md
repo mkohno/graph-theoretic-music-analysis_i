@@ -3,7 +3,7 @@ Graph Theoretic Analysis of Music
 
 Graph theoritic analysis offers a powerful framework for modeling relationships between musical elements, enabling the visualization of connections, network structure, and occurrence frequencies using metrics such as degree distribusion, density and centrality. This approach facilitates the identification of emergent, self-organizing properties within musical compositions.
 
-## Graph-Theoretic Analysis of Musical Structure
+## 🎶 Graph-Theoretic Analysis of Musical Structure
 
 This repository contains the code and data used in the paper:
 
