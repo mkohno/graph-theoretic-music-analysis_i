@@ -29,7 +29,7 @@ This repository contains the code and data used in the paper:
 1. convert midi (.mid) to text file
 2. convert midi text to represent note
 3. create node from the note and create csv file which describes node-to-node relationship
-4. import the csv file and create Network using Cytoscape
+4. analyse using Cytoscape - import the csv file and create Network
 5. (optional) evaluate power law fitting
 6. (optional) evaluate pith difference of eacn node
   
@@ -48,7 +48,7 @@ This repository contains the code and data used in the paper:
    4.  N=4 (4 notes as a node)
      `awk -f note2node_1i4.awk schoen_op19_note > schoen_op19_4.tmp`
      `awk -f node2network.awk schoen_op19_4.tmp > schoen_op19_4.csv`
-4. run Cytoscape and import the csv file and analyse
+4. run Cytoscape, import the csv file and analyse
 5. `python3 power-law-fitting.py ND_schoen_op19_1` (ND_xx is a Node Degree Distribution, retrieved from the Cytoscape analysis)
 6. `awk -f midi_pitch.awk schoen_op19.txt > schoen_op19_pitch`
    `awk -f pitch_diff_1i4.awk schoen_op19_pitch > schoen_op19_4-pitch`
