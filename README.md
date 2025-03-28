@@ -11,10 +11,10 @@ This repository contains the code and data used in the paper:
 
 ### 📂 Contents
 
-- `main.py` – Main analysis script
+- `code/` – Analysis scripts
 - `data/` – MIDI files and derived note sequences
 - `results/` – Network metrics and figures
-- `notebook.ipynb` – Jupyter notebook for reproducing key results
+<!-- - `notebook.ipynb` – Jupyter notebook for reproducing key results  -->
 
 ### 📦 Requirements
 
@@ -22,9 +22,21 @@ This repository contains the code and data used in the paper:
 - awk (pattern-directed scanning and processing language)
 - Python Library : mido
 - Python Library : powerlaw
-- Cytoscape 
+- Cytoscape 3.10.2
 
+### ❄️ Workflow 
+
+- convert midi (.mid) to text file (e.g. `python3 midi-to-text.py ~/_Music_Analysis/_Schoenberg/Op.19.mid  schoen_op19.txt`)
+- convert midi text to represent note 
+- 
+- create csv file which describes node-to-node relationship
+- import the csv file and create Network using Cytoscape 
+- Python Library : powerlaw
+- Cytoscape 3.10.2
+
+<!--
 ## ▶️ How to Run
 
 ```bash
 python main.py
+-->
