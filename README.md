@@ -13,7 +13,7 @@ This repository contains the code and data used in the poster:
 
 
 ### 📂 Contents
-- `code/` – Analysis scripts
+- `codes/` – Python and Awk scripts
 - `data/` – MIDI files and derived note sequences
 - `results/` – Graph metrics data
 <!-- - `notebook.ipynb` – Jupyter notebook for reproducing key results  -->
