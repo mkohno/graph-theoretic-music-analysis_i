@@ -8,8 +8,8 @@ This repository contains the code and data used in the poster:
 
 *Is C Major Truly Radiant? A Graph-Theoretic Study of J.S. Bach’s Solo String Works and Their Tonal Characteristics* ([ICCCM 2025](https://www.titanmusic.com/icccm2025/programme.html))
 
-[Poster]  \
-[Presentation]
+[Poster](https://drive.google.com/file/d/1Pav9eHr542tOucvnUs5rs3pl_MF7IZi_/view?usp=sharing)  \
+[Presentation](https://drive.google.com/file/d/1UxiRrRwjy_UW96hZjXyFCfn4UHNAc93f/view?usp=sharing)
 
 
 ### 📂 Contents
