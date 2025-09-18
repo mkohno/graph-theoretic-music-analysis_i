@@ -1,12 +1,16 @@
-# graph-music-analysis
-Graph Theoretic Analysis of Music
+# Graph Theoretic Analysis of Music
 
-Graph theoritic analysis offers a powerful framework for modeling relationships between musical elements, enabling the visualization of connections, network structure, and occurrence frequencies using metrics such as degree distribusion, density and centrality. This approach facilitates the identification of emergent, self-organizing properties within musical compositions.
+Graph theoritic analysis offers a powerful framework for modelling relationships between musical elements, enabling the visualisation of connections, network structure, and occurrence frequencies using metrics such as degree distribusion, density and centrality. This approach facilitates the identification of emergent, self-organising properties within musical compositions.
+
 
 ## 🎶 Graph-Theoretic Analysis of Musical Structure
-This repository contains the code and data used in the paper:
+This repository contains the code and data used in the poster:
 
-> *Diverse, yet Cohesive: An Interpretable Graph-Theoretic Analysis of J.S. Bach and Schoenberg’s Music* (ISMIR 2025, Submitted)
+*Is C Major Truly Radiant? A Graph-Theoretic Study of J.S. Bach’s Solo String Works and Their Tonal Characteristics* ([ICCCM 2025](https://www.titanmusic.com/icccm2025/programme.html))
+
+[Poster]  \
+[Presentation]
+
 
 ### 📂 Contents
 - `code/` – Analysis scripts
@@ -19,35 +23,49 @@ This repository contains the code and data used in the paper:
 - awk (pattern-directed scanning and processing language)
 - Python Library : mido
 - Python Library : powerlaw
-- Cytoscape 3.10.2
+- Cytoscape 3.10.3
 
 ### ❄️ Workflow 
 1. convert midi (.mid) to text file
 2. convert midi text to represent note
 3. create node from the note and create csv file which describes node-to-node relationship
 4. analyse using Cytoscape - import the csv file and create Network
-5. (optional) evaluate power law fitting
-6. (optional) evaluate pith difference of eacn node
+5. evaluate power law fitting
+6. evaluate pith difference of eacn node
   
-#### Example (Schoenberg Op.19)
-1. `python3 midi-to-text.py ~/_Music_Analysis/_Schoenberg/Op.19.mid  schoen_op19.txt`
-2. `awk -f midi_note.awk schoen_op19.txt > schoen_op19_note`
-3. 
-   1.  N=1 (1 note as a node)
-     `awk -f node2network.awk schoen_op19_note > schoen_op19_1.csv`
-   2.  N=2 (2 notes as a node)
-     `awk -f note2node_1i.awk schoen_op19_note > schoen_op19_2.tmp`
-     `awk -f node2network.awk schoen_op19_2.tmp > schoen_op19_2.csv`
-   3.  N=3 (3 notes as a node)
-     `awk -f note2node_1i3.awk schoen_op19_note > schoen_op19_3.tmp`
-     `awk -f node2network.awk schoen_op19_3.tmp > schoen_op19_3.csv`
-   4.  N=4 (4 notes as a node)
-     `awk -f note2node_1i4.awk schoen_op19_note > schoen_op19_4.tmp`
-     `awk -f node2network.awk schoen_op19_4.tmp > schoen_op19_4.csv`
-4. run Cytoscape, import the csv file and analyse
-5. `python3 power-law-fitting.py ND_schoen_op19_1` (ND_xx is a Node Degree Distribution, retrieved from the Cytoscape analysis)
-6. `awk -f midi_pitch.awk schoen_op19.txt > schoen_op19_pitch`
-   `awk -f pitch_diff_1i4.awk schoen_op19_pitch > schoen_op19_4-pitch`
+#### Example 
+1.　convert midi (.mid) to text file 
+```
+    python3 midi-to-text.py ~/_Music_Analysis/_Bach_MIDI/bwv1001/vs1-1ada.mid  vs1-1ada.txt
+    python3 midi-to-text.py ~/_Music_Analysis/_Bach_MIDI/bwv1001/vs1-2fug.mid  vs1-2fug.txt
+    python3 midi-to-text.py ~/_Music_Analysis/_Bach_MIDI/bwv1001/vs1-3sic.mid  vs1-3sic.txt
+    python3 midi-to-text.py ~/_Music_Analysis/_Bach_MIDI/bwv1001/vs1-4prs.mid  vs1-4prs.txt
+
+    cat vs1-1ada.txt vs1-2fug.txt vs1-3sic.txt vs1-4prs.txt > vs1-complete.txt
+```   
+2.  convert midi text to represent note
+```
+    awk -f midi_note-and-pitch.awk vs1-complete.txt > vs1-complete_note
+``` 
+    
+4. create node from the note and create csv file which describes 2-gram node-to-node relationship
+```
+    awk -f note2node-pitch_1i.awk vs1-complete_note > vs1-complete_2.tmp
+    awk -f node2network_pd.awk vs1-complete_2.tmp > vs1-complete_2_pd.csv
+ ```  
+
+5. analyse using Cytoscape - import the csv file and create Network
+
+6. evaluate power law fitting
+```
+    python3 power-law-fitting.py ND_vs1-complete_2 (ND_xx is a Node Degree Distribution, retrieved from the Cytoscape analysis)
+```
+  
+7. evaluate pith difference of eacn node
+```
+    awk -f pitch_diff.awk vs1-complete_note > vs1-complete_2_pitch.csv
+```
+
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
