@@ -14,7 +14,7 @@ This repository contains the code and data used in the poster:
 
 ### 📂 Contents
 - `codes/` – Python and Awk scripts
-- `data/` – MIDI files and derived note sequences
+- `data/` – Node-to-Node data (csv), Pitch difference data, Node Degree Distributions
 - `results/` – Graph metrics data
 <!-- - `notebook.ipynb` – Jupyter notebook for reproducing key results  -->
 
