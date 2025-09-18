@@ -15,7 +15,7 @@ This repository contains the code and data used in the poster:
 ### 📂 Contents
 - `code/` – Analysis scripts
 - `data/` – MIDI files and derived note sequences
-- `results/` – Network metrics and figures
+- `results/` – Graph metrics data
 <!-- - `notebook.ipynb` – Jupyter notebook for reproducing key results  -->
 
 ### 📦 Requirements
